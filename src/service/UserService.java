@@ -16,7 +16,6 @@ import repository.ExpenseRepository;
 import repository.UserRepository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -170,12 +169,10 @@ public class UserService {
 
   private boolean validatePercentSplit(List<Split> splits) {
     double percentage = 0.0;
-
     for (var split : splits) {
       var percentSplit = (PercentSplit) split;
       percentage += percentSplit.getPercent();
     }
-
     return ((percentage * 100.00) / 100.00) == 100.00;
   }
 
